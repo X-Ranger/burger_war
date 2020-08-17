@@ -46,10 +46,6 @@ class CheeseBurger():
         '''
         update wheel rotation num
         '''
-<<<<<<< HEAD
-        self.wheel_rot_r = data.position[0]
-        self.wheel_rot_l = data.position[1]
-=======
         # find left and right wheel_state index
         r_joint_idx = data.name.index("wheel_right_joint")
         l_joint_idx = data.name.index("wheel_left_joint")
@@ -57,7 +53,6 @@ class CheeseBurger():
         # update joint state value
         self.wheel_rot_r = data.position[r_joint_idx]
         self.wheel_rot_l = data.position[l_joint_idx]
->>>>>>> upstream/master
 
     def calcTwist(self):
         '''
@@ -84,11 +79,7 @@ class CheeseBurger():
         '''
         update robot state 'go' or 'back'
         '''
-<<<<<<< HEAD
-        if self.state == 'go' and self.wheel_rot_r > 30:
-=======
         if self.state == 'go' and self.wheel_rot_r > 28:
->>>>>>> upstream/master
             self.state = 'back'
         elif self.state == 'back' and self.wheel_rot_r < 5:
             self.state = 'go'
